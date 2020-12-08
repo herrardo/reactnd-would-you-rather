@@ -1,6 +1,7 @@
 {
   "name": "reactnd-would-you-rather",
   "version": "0.1.0",
+  "homepage": "https://herrardo.github.io/reactnd-would-you-rather",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
