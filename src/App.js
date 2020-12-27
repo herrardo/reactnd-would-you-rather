@@ -1,26 +1,30 @@
+import React, { useEffect } from 'react';
 import './App.css';
-import React from 'react';
 import logo from './logo.svg';
+import { handleInitialData } from './actions/shared';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ dispatch, authedUser, users }) {
+  console.log('authed', authedUser);
+  useEffect(() => {
+    dispatch(handleInitialData());
+  }, []);
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Deployed by Github Actions
-        </a>
-      </header>
+      <div>Authed: {users['sarahedo'].avatarURL}</div>
     </div>
   );
 }
-
-export default App;
+App.propTypes = {
+  dispatch: PropTypes.func,
+  authedUser: PropTypes.string,
+  users: PropTypes.object,
+};
+const mapStateToProps = ({ authedUser, users }) => {
+  return {
+    authedUser,
+    users,
+  };
+};
+export default connect(mapStateToProps)(App);
