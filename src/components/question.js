@@ -1,4 +1,3 @@
-import Link from '@material-ui/core/Link';
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,22 +9,35 @@ import { useHistory } from 'react-router-dom';
 
 const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
   question = question || questions[id];
-  const history = useHistory();
   const answeredByAuthedUser =
     users && authedUser ? Object.keys(users[authedUser].answers).includes(question.id) : true;
+
+  const votesForFirstOption = question.optionOne.votes.length;
+  const votesForSecondOption = question.optionTwo.votes.length;
+  const toalVotes = votesForFirstOption + votesForSecondOption;
+
+  const history = useHistory();
+
   const handleQuestion = answer => {
-    console.log(answer);
     dispatch(answerQuestion({ authedUser, qid: question.id, answer }));
     dispatch(userAnswerQuestion({ authedUser, qid: question.id, answer }));
     handleHistory();
   };
+
   const handleHistory = () => {
     history.push(`${HOMEPAGE}/questions/${question.id}`);
   };
+
   return (
     <div>
       <h3 className='question__title'>Would you rather?</h3>
-      <div>
+      <img
+        src={users[question.author].avatarURL}
+        width='50px'
+        height='auto'
+        className='question__picture'
+      />
+      <div className='question__group'>
         <Button
           color='primary'
           aria-label={`button ${question.optionOne.text}`}
@@ -35,9 +47,14 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
         >
           {question.optionOne.text}
         </Button>
-        {question.optionOne.votes.includes(authedUser) && <span>My Answer</span>}
+        <span className='question__results'>
+          {votesForFirstOption} votes - {Math.round((votesForFirstOption / toalVotes) * 100)}%
+        </span>
+        {question.optionOne.votes.includes(authedUser) && (
+          <span className='question__my-answer'>My Answer</span>
+        )}
       </div>
-      <div>
+      <div className='question__group'>
         <Button
           color='primary'
           aria-label={`button ${question.optionTwo.text}`}
@@ -47,7 +64,12 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
         >
           {question.optionTwo.text}
         </Button>
-        {question.optionTwo.votes.includes(authedUser) && <span>My Answer</span>}
+        <span className='question__results'>
+          {votesForSecondOption} votes - {Math.round((votesForSecondOption / toalVotes) * 100)}%
+        </span>
+        {question.optionTwo.votes.includes(authedUser) && (
+          <span className='question__my-answer'>My Answer</span>
+        )}
       </div>
       {id === null && (
         <Button className='question__link' onClick={handleHistory}>
