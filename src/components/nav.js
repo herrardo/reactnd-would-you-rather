@@ -12,6 +12,7 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import LoginStatus from './login-status';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,7 +60,7 @@ const Nav = () => {
           <Typography variant='h6' className={classes.title}>
             Would You rather
           </Typography>
-          <Button color='inherit'>Login</Button>
+          <LoginStatus />
         </Toolbar>
       </AppBar>
     </div>
