@@ -8,6 +8,7 @@ import Page404 from './page404';
 import Questions from './questions';
 import Leaderboard from './leaderboard';
 import Login from './login';
+import Nav from './nav';
 
 const App = ({ dispatch, login }) => {
   useEffect(() => {
@@ -20,6 +21,7 @@ const App = ({ dispatch, login }) => {
           <Login login={login} />
         ) : (
           <div className='container'>
+            <Nav></Nav>
             <Switch>
               <Route path='/reactnd-would-you-rather' exact component={Questions} />
               <Route path='/reactnd-would-you-rather/leaderboard' exact component={Leaderboard} />

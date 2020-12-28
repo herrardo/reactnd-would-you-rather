@@ -12,7 +12,7 @@ const Page404 = () => (
     }}
   >
     <h1>Page not found</h1>
-    <h1>Where are you going mate?</h1>
+    <h2>Where are you going mate?</h2>
   </div>
 );
 
