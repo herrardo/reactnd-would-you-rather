@@ -1,24 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { handleInitialData } from './actions/shared';
+import { handleInitialData } from '../actions/shared';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Questions from './components/questions';
+import Questions from './questions';
+import Leaderboard from './leaderboard';
+import Login from './login';
 
-const App = ({ dispatch, loading }) => {
+const App = ({ dispatch, login }) => {
   useEffect(() => {
     dispatch(handleInitialData());
   }, []);
   return (
     <Router>
-      <div className='container'>
-        {loading ? (
-          <div>Loading</div>
+      <div className='page'>
+        {login ? (
+          <Login login={login} />
         ) : (
-          <div>
+          <div className='container'>
             HOLA
-            <Route path='/' exact component={Questions}></Route>
+            <Route path='/reactnd-would-you-rather' exact component={Questions}></Route>
+            <Route
+              path='/reactnd-would-you-rather/leaderboard'
+              exact
+              component={Leaderboard}
+            ></Route>
           </div>
         )}
       </div>
@@ -29,13 +36,13 @@ App.propTypes = {
   dispatch: PropTypes.func,
   authedUser: PropTypes.string,
   users: PropTypes.object,
-  loading: PropTypes.bool,
+  login: PropTypes.bool,
 };
 const mapStateToProps = ({ authedUser, users }) => {
   return {
     authedUser,
     users,
-    loading: authedUser === '',
+    login: authedUser === null,
   };
 };
 export default connect(mapStateToProps)(App);
