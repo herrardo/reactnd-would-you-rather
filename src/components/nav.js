@@ -40,8 +40,14 @@ const Nav = () => {
     <div className={classes.root}>
       <AppBar position='static'>
         <Toolbar>
-          <IconButton edge='start' className={classes.menuButton} color='inherit' aria-label='menu'>
-            <MenuIcon onClick={handleClick} />
+          <IconButton
+            edge='start'
+            className={classes.menuButton}
+            color='inherit'
+            aria-label='menu'
+            onClick={handleClick}
+          >
+            <MenuIcon />
           </IconButton>
           <Menu
             id='simple-menu'

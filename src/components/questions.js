@@ -10,11 +10,13 @@ const Questions = ({ questions, authedUser, users }) => {
     setAnswered(!answered);
   };
   const answeredQuestionsByAuthedUser = Object.keys(users[authedUser].answers);
-  const filteredQuestions = Object.values(questions).filter(question => {
-    return answered
-      ? answeredQuestionsByAuthedUser.includes(question.id)
-      : !answeredQuestionsByAuthedUser.includes(question.id);
-  });
+  const filteredQuestions = Object.values(questions)
+    .filter(question => {
+      return answered
+        ? answeredQuestionsByAuthedUser.includes(question.id)
+        : !answeredQuestionsByAuthedUser.includes(question.id);
+    })
+    .sort((a, b) => a.timestamp - b.timestamp);
   return (
     <div className='questions'>
       <h3 className='center'>
@@ -28,7 +30,9 @@ const Questions = ({ questions, authedUser, users }) => {
       />
       <ul className='dashboard-list'>
         {filteredQuestions.map(question => (
-          <Question question={question} key={question.id} />
+          <li key={question.id}>
+            <Question question={question} />
+          </li>
         ))}
       </ul>
     </div>

@@ -36,7 +36,7 @@ const Login = ({ dispatch, authedUser, users, login }) => {
         timeout: 500,
       }}
     >
-      <Fade in={open}>
+      <Fade in={true}>
         <div className='login'>
           <h2 id='transition-modal-title'>Choose and user to login</h2>
           <ButtonGroup

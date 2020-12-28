@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Page404 from './page404';
+import Question from './question';
 import Questions from './questions';
 import Leaderboard from './leaderboard';
 import Login from './login';
@@ -25,6 +26,7 @@ const App = ({ dispatch, login }) => {
             <Switch>
               <Route path='/reactnd-would-you-rather' exact component={Questions} />
               <Route path='/reactnd-would-you-rather/leaderboard' exact component={Leaderboard} />
+              <Route path='/reactnd-would-you-rather/questions/:id' exact component={Question} />
               <Route component={Page404} />
             </Switch>
           </div>
