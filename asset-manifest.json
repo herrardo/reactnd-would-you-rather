@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/reactnd-would-you-rather/static/css/main.b5978380.chunk.css",
-    "main.js": "/reactnd-would-you-rather/static/js/main.20da40ce.chunk.js",
-    "main.js.map": "/reactnd-would-you-rather/static/js/main.20da40ce.chunk.js.map",
+    "main.css": "/reactnd-would-you-rather/static/css/main.74052f28.chunk.css",
+    "main.js": "/reactnd-would-you-rather/static/js/main.11f9d732.chunk.js",
+    "main.js.map": "/reactnd-would-you-rather/static/js/main.11f9d732.chunk.js.map",
     "runtime-main.js": "/reactnd-would-you-rather/static/js/runtime-main.e784eae8.js",
     "runtime-main.js.map": "/reactnd-would-you-rather/static/js/runtime-main.e784eae8.js.map",
-    "static/js/2.076c7b02.chunk.js": "/reactnd-would-you-rather/static/js/2.076c7b02.chunk.js",
-    "static/js/2.076c7b02.chunk.js.map": "/reactnd-would-you-rather/static/js/2.076c7b02.chunk.js.map",
+    "static/js/2.38970b04.chunk.js": "/reactnd-would-you-rather/static/js/2.38970b04.chunk.js",
+    "static/js/2.38970b04.chunk.js.map": "/reactnd-would-you-rather/static/js/2.38970b04.chunk.js.map",
     "index.html": "/reactnd-would-you-rather/index.html",
-    "static/css/main.b5978380.chunk.css.map": "/reactnd-would-you-rather/static/css/main.b5978380.chunk.css.map",
-    "static/js/2.076c7b02.chunk.js.LICENSE.txt": "/reactnd-would-you-rather/static/js/2.076c7b02.chunk.js.LICENSE.txt"
+    "static/css/main.74052f28.chunk.css.map": "/reactnd-would-you-rather/static/css/main.74052f28.chunk.css.map",
+    "static/js/2.38970b04.chunk.js.LICENSE.txt": "/reactnd-would-you-rather/static/js/2.38970b04.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e784eae8.js",
-    "static/js/2.076c7b02.chunk.js",
-    "static/css/main.b5978380.chunk.css",
-    "static/js/main.20da40ce.chunk.js"
+    "static/js/2.38970b04.chunk.js",
+    "static/css/main.74052f28.chunk.css",
+    "static/js/main.11f9d732.chunk.js"
   ]
 }
