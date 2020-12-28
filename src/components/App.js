@@ -3,7 +3,8 @@ import './App.css';
 import { handleInitialData } from '../actions/shared';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Page404 from './page404';
 import Questions from './questions';
 import Leaderboard from './leaderboard';
 import Login from './login';
@@ -19,13 +20,11 @@ const App = ({ dispatch, login }) => {
           <Login login={login} />
         ) : (
           <div className='container'>
-            HOLA
-            <Route path='/reactnd-would-you-rather' exact component={Questions}></Route>
-            <Route
-              path='/reactnd-would-you-rather/leaderboard'
-              exact
-              component={Leaderboard}
-            ></Route>
+            <Switch>
+              <Route path='/reactnd-would-you-rather' exact component={Questions} />
+              <Route path='/reactnd-would-you-rather/leaderboard' exact component={Leaderboard} />
+              <Route component={Page404} />
+            </Switch>
           </div>
         )}
       </div>
