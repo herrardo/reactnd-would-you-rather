@@ -1,6 +1,14 @@
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+export const ANSWER_QUESTION = 'ANSWER_QUESTION';
 
-export const receiveQuestions = tweets => ({
+export const receiveQuestions = questions => ({
   type: RECEIVE_QUESTIONS,
-  tweets,
+  questions,
+});
+
+export const answerQuestion = ({ qid, answer, authedUser }) => ({
+  type: ANSWER_QUESTION,
+  qid,
+  answer,
+  authedUser,
 });
