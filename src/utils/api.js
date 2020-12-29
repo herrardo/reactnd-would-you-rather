@@ -7,7 +7,7 @@ export function getInitialData() {
   }));
 }
 
-export function saveQuestion(info) {
+export function saveQuestionRequest(info) {
   return _saveQuestion(info);
 }
 

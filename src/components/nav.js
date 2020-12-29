@@ -60,6 +60,9 @@ const Nav = () => {
               <NavLink to={HOMEPAGE}>Questions</NavLink>
             </MenuItem>
             <MenuItem onClick={handleClose}>
+              <NavLink to={`${HOMEPAGE}/add`}>Add Question</NavLink>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink to={`${HOMEPAGE}/leaderboard`}>Leaderboard</NavLink>
             </MenuItem>
           </Menu>
