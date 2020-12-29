@@ -1,4 +1,48 @@
 .App {
   text-align: center;
 }
+.questions {
+  margin: 20px;
+}
+.question {
+  margin-left: 20px;
+}
 
+.question__group {
+  margin: 3px 0px;
+}
+.question__my-answer {
+  background: #1d1d1d;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left:10px;
+  font-size:11px;
+}
+.question__results {
+  background: #11dd22;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-left:10px;
+  font-size:12px;
+}
+
+.avatar {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.leaderboard-list__result {
+  background: #aa3163;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-top:10px;
+  font-size:12px;
+  width:150px;
+}
+.leaderboard-list__result .total{
+  font-size:18px;
+  font-weight:bold;
+}
