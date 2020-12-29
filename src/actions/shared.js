@@ -1,16 +1,24 @@
-import { getInitialData } from '../utils/api';
-import { receiveQuestions } from './questions';
-import { receiveUsers } from './users';
-import { setAuthedUser } from './authedUser';
+import { getInitialData, saveQuestionAnswer } from '../utils/api';
+import { answerQuestion, receiveQuestions } from './questions';
+import { receiveUsers, userAnswerQuestion } from './users';
 
-const AUTHED_ID = 'tylermcginnis';
-
-export function handleInitialData() {
+export const handleInitialData = () => {
   return dispatch => {
     return getInitialData().then(({ users, questions }) => {
       dispatch(receiveQuestions(questions));
       dispatch(receiveUsers(users));
-      // dispatch(setAuthedUser(AUTHED_ID));
     });
   };
-}
+};
+
+export const handleAnswerQuestion = info => {
+  return dispatch => {
+    return saveQuestionAnswer(info)
+      .then(() => dispatch(answerQuestion(info)))
+      .then(() => dispatch(userAnswerQuestion(info)))
+      .catch(e => {
+        console.warn('Error in saving question answer: ', e);
+        console.warn('There was an error saving the answer for the question. Try again.');
+      });
+  };
+};

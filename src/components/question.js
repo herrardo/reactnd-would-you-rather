@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Button } from '@material-ui/core';
-import { answerQuestion } from '../actions/questions';
-import { userAnswerQuestion } from '../actions/users';
+import { Button, Avatar } from '@material-ui/core';
 import { HOMEPAGE } from '../utils/constants';
 import { useHistory } from 'react-router-dom';
+import { handleAnswerQuestion } from '../actions/shared';
 
 const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
   question = question || questions[id];
@@ -19,8 +18,7 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
   const history = useHistory();
 
   const handleQuestion = answer => {
-    dispatch(answerQuestion({ authedUser, qid: question.id, answer }));
-    dispatch(userAnswerQuestion({ authedUser, qid: question.id, answer }));
+    dispatch(handleAnswerQuestion({ authedUser, qid: question.id, answer }));
     handleHistory();
   };
 
@@ -29,14 +27,9 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
   };
 
   return (
-    <div>
+    <div className='question'>
       <h3 className='question__title'>Would you rather?</h3>
-      <img
-        src={users[question.author].avatarURL}
-        width='50px'
-        height='auto'
-        className='question__picture'
-      />
+      <Avatar src={users[question.author].avatarURL} className='avatar' />
       <div className='question__group'>
         <Button
           color='primary'
@@ -76,7 +69,13 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
         )}
       </div>
       {id === null && (
-        <Button className='question__link' onClick={handleHistory}>
+        <Button
+          className='question__link'
+          color='secondary'
+          variant='outlined'
+          size='small'
+          onClick={handleHistory}
+        >
           View Detail
         </Button>
       )}

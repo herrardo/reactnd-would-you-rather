@@ -2,7 +2,11 @@ export const orderUsers = ({ users }) => {
   return Object.values(users)
     .map(user => ({
       ...user,
-      interactions: Object.keys(user.answers).length + user.questions.length,
+      interactions: {
+        answers: Object.keys(user.answers).length,
+        questions: user.questions.length,
+        total: Object.keys(user.answers).length + user.questions.length,
+      },
     }))
     .sort((a, b) => b.interactions - a.interactions);
 };

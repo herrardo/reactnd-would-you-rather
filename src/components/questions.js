@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Question from './question';
-import { Button, FormControlLabel, Switch } from '@material-ui/core';
-import './questions.css';
+import { FormControlLabel, Switch } from '@material-ui/core';
 
 const Questions = ({ questions, authedUser, users }) => {
   const [answered, setAnswered] = useState(false);
