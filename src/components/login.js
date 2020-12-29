@@ -44,6 +44,7 @@ const Login = ({ dispatch, authedUser, users, login }) => {
             color='primary'
             aria-label='vertical contained primary button group'
             variant='contained'
+            style={{ width: '100%' }}
           >
             {Object.values(users).map(user => (
               <Button key={user.id} onClick={() => selectUser(user.id)}>
