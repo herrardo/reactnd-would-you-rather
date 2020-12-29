@@ -47,9 +47,11 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
         >
           {question.optionOne.text}
         </Button>
-        <span className='question__results'>
-          {votesForFirstOption} votes - {Math.round((votesForFirstOption / toalVotes) * 100)}%
-        </span>
+        {id !== null && (
+          <span className='question__results'>
+            {votesForFirstOption} votes - {Math.round((votesForFirstOption / toalVotes) * 100)}%
+          </span>
+        )}
         {question.optionOne.votes.includes(authedUser) && (
           <span className='question__my-answer'>My Answer</span>
         )}
@@ -64,9 +66,11 @@ const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
         >
           {question.optionTwo.text}
         </Button>
-        <span className='question__results'>
-          {votesForSecondOption} votes - {Math.round((votesForSecondOption / toalVotes) * 100)}%
-        </span>
+        {id !== null && (
+          <span className='question__results'>
+            {votesForSecondOption} votes - {Math.round((votesForSecondOption / toalVotes) * 100)}%
+          </span>
+        )}
         {question.optionTwo.votes.includes(authedUser) && (
           <span className='question__my-answer'>My Answer</span>
         )}
