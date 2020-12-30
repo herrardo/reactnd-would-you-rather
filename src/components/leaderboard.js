@@ -30,7 +30,7 @@ const Leaderboard = ({ orderedUsers }) => {
 };
 
 Leaderboard.propTypes = {
-  orderedUsers: PropTypes.object,
+  orderedUsers: PropTypes.array,
 };
 
 const mapStateToProps = state => {

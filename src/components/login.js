@@ -19,10 +19,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Login = ({ dispatch, authedUser, users, login }) => {
+const Login = ({ users, login, setAuthedUser }) => {
   const classes = useStyles();
   const selectUser = userId => {
-    dispatch(setAuthedUser(userId));
+    setAuthedUser(userId);
   };
 
   return (
@@ -58,7 +58,7 @@ const Login = ({ dispatch, authedUser, users, login }) => {
   );
 };
 Login.propTypes = {
-  dispatch: PropTypes.func,
+  setAuthedUser: PropTypes.func,
   authedUser: PropTypes.string,
   users: PropTypes.object,
   login: PropTypes.bool,
@@ -70,10 +70,7 @@ const mapStateToProps = ({ authedUser, users }, { login }) => {
     login,
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    dispatch,
-    setAuthedUser,
-  };
+const mapDispatchToProps = {
+  setAuthedUser,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

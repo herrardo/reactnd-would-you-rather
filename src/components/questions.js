@@ -16,7 +16,7 @@ const Questions = ({ questions, authedUser, users }) => {
         ? answeredQuestionsByAuthedUser.includes(question.id)
         : !answeredQuestionsByAuthedUser.includes(question.id);
     })
-    .sort((a, b) => a.timestamp - b.timestamp);
+    .sort((a, b) => b.timestamp - a.timestamp);
   return (
     <div className='questions'>
       <h3 className='center'>

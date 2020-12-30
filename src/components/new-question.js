@@ -3,11 +3,17 @@ import React, { useState } from 'react';
 import { Button, TextField, Chip } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/shared';
+import { useHistory } from 'react-router-dom';
+import { HOMEPAGE } from '../utils/constants';
 
 const NewQuestion = ({ authedUser, dispatch }) => {
   const [option1, setOption1] = useState('');
   const [option2, setOption2] = useState('');
   const [questionAdded, setQuestionAdded] = useState(false);
+  const history = useHistory();
+  const handleHistory = () => {
+    history.push(HOMEPAGE);
+  };
   const handleInput1 = e => {
     setOption1(e.target.value);
   };
@@ -26,7 +32,10 @@ const NewQuestion = ({ authedUser, dispatch }) => {
     setOption1('');
     setOption2('');
     setQuestionAdded(true);
-    setTimeout(() => setQuestionAdded(false), 3000);
+    setTimeout(() => {
+      setQuestionAdded(false);
+      handleHistory();
+    }, 500);
   };
   return (
     <div className='add-question'>

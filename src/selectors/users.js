@@ -8,5 +8,5 @@ export const orderUsers = ({ users }) => {
         total: Object.keys(user.answers).length + user.questions.length,
       },
     }))
-    .sort((a, b) => b.interactions - a.interactions);
+    .sort((a, b) => b.interactions.total - a.interactions.total);
 };
