@@ -5,9 +5,13 @@ import { Button, Avatar } from '@material-ui/core';
 import { HOMEPAGE } from '../utils/constants';
 import { useHistory } from 'react-router-dom';
 import { handleAnswerQuestion } from '../actions/shared';
+import Page404 from './page404';
 
 const Question = ({ authedUser, question, questions, users, dispatch, id }) => {
   question = question || questions[id];
+  if (!question) {
+    return <Page404 />;
+  }
   const answeredByAuthedUser =
     users && authedUser ? Object.keys(users[authedUser].answers).includes(question.id) : true;
 
