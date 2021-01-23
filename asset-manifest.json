@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/resurrection-delorean/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/resurrection-delorean/static/js/main.cb47cfa9.chunk.js",
-    "main.js.map": "/resurrection-delorean/static/js/main.cb47cfa9.chunk.js.map",
-    "runtime-main.js": "/resurrection-delorean/static/js/runtime-main.548800af.js",
-    "runtime-main.js.map": "/resurrection-delorean/static/js/runtime-main.548800af.js.map",
-    "static/js/2.585fa056.chunk.js": "/resurrection-delorean/static/js/2.585fa056.chunk.js",
-    "static/js/2.585fa056.chunk.js.map": "/resurrection-delorean/static/js/2.585fa056.chunk.js.map",
-    "index.html": "/resurrection-delorean/index.html",
-    "static/css/main.ea1455b2.chunk.css.map": "/resurrection-delorean/static/css/main.ea1455b2.chunk.css.map",
-    "static/js/2.585fa056.chunk.js.LICENSE.txt": "/resurrection-delorean/static/js/2.585fa056.chunk.js.LICENSE.txt"
+    "main.css": "/reactnd-would-you-rather/static/css/main.a7280bf7.chunk.css",
+    "main.js": "/reactnd-would-you-rather/static/js/main.41e05fc9.chunk.js",
+    "main.js.map": "/reactnd-would-you-rather/static/js/main.41e05fc9.chunk.js.map",
+    "runtime-main.js": "/reactnd-would-you-rather/static/js/runtime-main.e784eae8.js",
+    "runtime-main.js.map": "/reactnd-would-you-rather/static/js/runtime-main.e784eae8.js.map",
+    "static/js/2.23ad8288.chunk.js": "/reactnd-would-you-rather/static/js/2.23ad8288.chunk.js",
+    "static/js/2.23ad8288.chunk.js.map": "/reactnd-would-you-rather/static/js/2.23ad8288.chunk.js.map",
+    "index.html": "/reactnd-would-you-rather/index.html",
+    "static/css/main.a7280bf7.chunk.css.map": "/reactnd-would-you-rather/static/css/main.a7280bf7.chunk.css.map",
+    "static/js/2.23ad8288.chunk.js.LICENSE.txt": "/reactnd-would-you-rather/static/js/2.23ad8288.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.548800af.js",
-    "static/js/2.585fa056.chunk.js",
-    "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.cb47cfa9.chunk.js"
+    "static/js/runtime-main.e784eae8.js",
+    "static/js/2.23ad8288.chunk.js",
+    "static/css/main.a7280bf7.chunk.css",
+    "static/js/main.41e05fc9.chunk.js"
   ]
 }
